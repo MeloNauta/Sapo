@@ -20,7 +20,7 @@ body {
 .chat-box {
     display: flex;
     flex-direction: column;
-    width: 480px; /* Aumentar a largura da caixa de chat */
+    width: 480px;
     max-width: 100%;
     background: #fff;
     border-radius: 12px;
@@ -41,7 +41,7 @@ body {
 }
 
 .chat-header {
-    background: #4CAF50; /* Cor do cabeçalho do chat */
+    background: #4CAF50;
     color: #fff;
     padding: 15px;
     font-size: 18px;
@@ -52,10 +52,10 @@ body {
 
 .chat-content {
     flex: 1;
-    padding: 20px; /* Aumentar o padding para mais espaço */
-    background: #f9f9f9; /* Cor de fundo das mensagens */
+    padding: 20px; 
+    background: #f9f9f9; 
     overflow-y: auto;
-    max-height: 600px; /* Aumentar a altura máxima */
+    max-height: 600px; 
     border-bottom: 1px solid #ddd;
 }
 
@@ -63,19 +63,19 @@ body {
     margin: 10px 0;
     padding: 12px;
     border-radius: 15px;
-    max-width: 75%; /* Aumentar a largura das mensagens */
-    word-break: break-word; /* Quebra de palavras para evitar overflow */
+    max-width: 75%;
+    word-break: break-word; 
 }
 
 .chat-content .message-user {
-    background: #4CAF50; /* Cor de fundo das mensagens do usuário */
+    background: #4CAF50; 
     color: #fff;
     margin-left: auto;
     text-align: right;
 }
 
 .chat-content .message-sapo {
-    background: #fff; /* Cor de fundo das mensagens do sapo */
+    background: #fff; 
     color: #333;
     margin-right: auto;
 }
@@ -84,23 +84,23 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    background: #fff; /* Cor de fundo da área de entrada de mensagem */
+    background: #fff; 
     border-top: 1px solid #ddd;
 }
 
 input[type="text"] {
     flex: 1;
-    padding: 15px; /* Aumenta o tamanho da área de entrada */
+    padding: 15px;
     border: 1px solid #ddd;
     border-radius: 20px;
     margin-right: 10px;
     font-size: 16px;
     outline: none;
-    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    box-sizing: border-box; 
 }
 
 button {
-    background: #4CAF50; /* Cor do botão */
+    background: #4CAF50; 
     border: none;
     border-radius: 20px;
     color: #fff;
@@ -111,11 +111,11 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Cor do botão ao passar o mouse */
+    background-color: #45a049; 
 }
 
 button:active {
-    transform: scale(0.98); /* Efeito de clique no botão */
+    transform: scale(0.98); 
 }
 
 .btn-back {
