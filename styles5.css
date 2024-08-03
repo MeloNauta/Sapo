@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5dc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.chat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    width: 480px; /* Aumentar a largura da caixa de chat */
+    max-width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-header {
+    background: #4CAF50; /* Cor do cabeçalho do chat */
+    color: #fff;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-content {
+    flex: 1;
+    padding: 20px; /* Aumentar o padding para mais espaço */
+    background: #f9f9f9; /* Cor de fundo das mensagens */
+    overflow-y: auto;
+    max-height: 600px; /* Aumentar a altura máxima */
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-content p {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 15px;
+    max-width: 75%; /* Aumentar a largura das mensagens */
+    word-break: break-word; /* Quebra de palavras para evitar overflow */
+}
+
+.chat-content .message-user {
+    background: #4CAF50; /* Cor de fundo das mensagens do usuário */
+    color: #fff;
+    margin-left: auto;
+    text-align: right;
+}
+
+.chat-content .message-sapo {
+    background: #fff; /* Cor de fundo das mensagens do sapo */
+    color: #333;
+    margin-right: auto;
+}
+
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #fff; /* Cor de fundo da área de entrada de mensagem */
+    border-top: 1px solid #ddd;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px; /* Aumenta o tamanho da área de entrada */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+}
+
+button {
+    background: #4CAF50; /* Cor do botão */
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+}
+
+button:active {
+    transform: scale(0.98); /* Efeito de clique no botão */
+}
+
+.btn-back {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #ddd;
+    color: #333;
+    border-top: 1px solid #ddd;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 0 0 12px 12px;
+    margin-top: auto;
+}
+
+.btn-back:hover {
+    background: #ccc;
+}
