@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const responses = {
         'Olá': 'Olá! Como posso ajudar você hoje?',
-        'Qual é o seu nome?': `Eu sou o ${getQueryParam('sapo')}.`,
+        'Oi': 'Oi!! Como posso ajudar você hoje?',
+        'Como posso te chamar?': `Pode me chamar de ${getQueryParam('sapo')}.`,
         'Como você está?': 'Estou ótimo, obrigado por perguntar!',
-        'O que você faz?': 'Eu sou um sapo virtual aqui para ajudar você com suas perguntas.',
-        'Adeus': 'Até logo! Lembre-se que sempre estou aqui.'
+        'O que você faz?': 'Eu sou um usuário como você e estou aqui para ajudar você com suas perguntas.',
+        'Tchau': 'Até logo! Lembre-se que sempre estrei aqui.'
     };
 
     function addMessage(sender, text) {
