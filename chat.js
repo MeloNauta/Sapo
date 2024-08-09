@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return urlParams.get(param);
     }
 
-    const sapo = getQueryParam('sapo') || 'Verde';
+    const sapo = getQueryParam('Sapo') || 'Verde';
     const sapoColors = {
         'Verde': 'figures/sapos/sapo-verde.png',
         'Amarelo': 'figures\sapos\sapo-amarelo.png',
@@ -25,11 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const responses = {
         'Olá': 'Olá! Como posso ajudar você hoje?',
         'Oi': 'Oi!! Como posso ajudar você hoje?',
-        'Como posso te chamar?': `Pode me chamar de ${sapo}.`,
-        'Como você está?': 'Estou ótimo, obrigado por perguntar!',
+        'Como posso te chamar?': `Pode me chamar de Sapo ${sapo}.`,
+        'Como você está?': 'Estou ótimo, obrigado por perguntar !!! E como você está?',
         'O que você faz?': 'Eu sou um usuário como você e estou aqui para ajudar você com suas perguntas.',
-        'Tchau': 'Até logo! Lembre-se que sempre estarei aqui.'
+        'Tchau': 'Até logo! Lembre-se que sempre estarei aqui.',
+        'Não estou bem': 'O que você está sentindo?'
+        
     };
+    
 
     function addMessage(sender, text) {
         const message = document.createElement('p');
