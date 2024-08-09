@@ -7,6 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Arial', sans-serif;
+    position: relative; /* Adicionado para garantir que o ::before fique posicionado corretamente */
 }
 
 body::before {
@@ -63,7 +64,7 @@ body::before {
     font-weight: 700;
     text-align: center;
     border-bottom: 1px solid #ddd;
-    background-image: url('figures/sapos/sapo-verde.png'); /* Imagem padrão */
+    background-image: url('figures/sapos/sapo-${sapoCor}.png'); /* Imagem padrão, substituir com JavaScript */
     background-size: 40px 40px;
     background-repeat: no-repeat;
     background-position: right center;
@@ -101,33 +102,27 @@ body::before {
     position: relative;
 }
 
-.message-user::before {
-    content: "User Icon";
+.message-user::before, .message-sapo::before {
+    content: "";
     position: absolute;
     top: -10px;
-    left: -50px;
     width: 40px;
     height: 40px;
-    background-image: url('figures/sapos/sapo-verde.png'); /* Imagem padrão para o usuário */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     color: transparent; 
 }
 
-.message-sapo::before {
-    content: "Sapo Icon";
-    position: absolute;
-    top: -10px;
-    right: -50px;
-    width: 40px;
-    height: 40px;
-    background-image: url('figures/sapos/sapo-verde.png'); /* Imagem padrão do sapo */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: transparent; 
+.message-user::before {
+    left: -50px;
 }
+
+.message-sapo::before {
+    right: -50px;
+    background-image: url('figures/sapos/sapo-${sapoCor}.png'); /* Imagem padrão do sapo, substituir com JavaScript */
+}
+
 .chat-footer {
     display: flex;
     align-items: center;
