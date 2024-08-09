@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return urlParams.get(param);
     }
 
-    const sapo = getQueryParam('sapo') || 'Verde'; // Cor padrão se não especificada
+    const sapo = getQueryParam('sapo') || 'Verde';
     const sapoColors = {
         'Verde': 'figures/sapos/sapo-verde.png',
         'Amarelo': 'figures\sapos\sapo-amarelo.png',

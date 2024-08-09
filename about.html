@@ -14,29 +14,35 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden; 
         }
+
         body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
-    url('figures/background.png');
-    background-repeat: repeat; 
-    background-size: 200px 200px; 
-    z-index: -1; 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                url('figures/background.png');
+            background-repeat: repeat; 
+            background-size: 200px 200px; 
+            z-index: -1; 
         }
+
         .container {
             width: 80%;
-            max-width: 1200px;
-            background: #fff; /* Fundo branco para o contêiner */
-            padding: 40px; /* Adiciona espaçamento interno */
-            border-radius: 12px; /* Bordas arredondadas */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+            max-width: 900px; 
+            background: #fff; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
             text-align: center;
+            margin: 20px; 
+            max-height: 70vh; 
+            overflow-y: auto; 
         }
 
         h1 {
@@ -50,7 +56,7 @@
             font-size: 16px;
             color: #333;
             margin-bottom: 40px;
-            text-align: justify; /* Justifica o texto */
+            text-align: justify; 
         }
 
         .gallery {
@@ -87,13 +93,31 @@
             font-size: 18px;
             color: #333;
         }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #45a049;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Projeto Sapo</h1>
         <p>
-            O Projeto Sapo surgiu na mostra científica do CETEC de 2023, com o aluno Cauã Melo Portela. Em 2024, o projeto está sendo aprimorado pelos estudantes Cauã, Lucas e Jaison da turma Kappa 2 do CETEC. Atualmente, muitos jovens enfrentam barreiras para acessar terapia psicológica devido a questões financeiras ou percepções errôneas. Embora a visão de que a saúde mental é uma "frescura" esteja mudando, ainda há estigmas a superar. O Sapo surge como uma solução para essa questão, oferecendo um espaço de apoio psicológico acessível. Com base na constatação de que o apoio psicológico é crucial para o bem-estar mental, o Sapo propõe sessões de bate-papo anônimas, permitindo que jovens compartilhem experiências e ofereçam suporte mútuo. O objetivo é criar uma comunidade segura e acolhedora, proporcionando um suporte valioso para aqueles que enfrentam dificuldades. O Sapo não é apenas uma plataforma, mas um espaço de apoio essencial para promover a saúde mental e a resiliência. 
+            O Projeto Sapo surgiu na mostra científica do CETEC de 2023, com o aluno Cauã Melo Portela. Em 2024, o projeto está sendo aprimorado pelos estudantes Cauã, Lucas e Jaison da turma Kappa 2 do CETEC. Atualmente, muitos jovens enfrentam barreiras para acessar terapia psicológica devido a questões financeiras ou percepções errôneas. Embora a visão de que a saúde mental é uma "frescura" esteja mudando, ainda há estigmas a superar. O Sapo surge como uma solução para essa questão, oferecendo um espaço de apoio psicológico acessível. Com base na constatação de que o apoio psicológico é crucial para o bem-estar mental, o Sapo propõe sessões de bate-papo anônimas, permitindo que jovens compartilhem experiências e ofereçam suporte mútuo. O objetivo é criar uma comunidade segura e acolhedora, proporcionando um suporte valioso para aqueles que enfrentam dificuldades. O Sapo não é apenas uma plataforma, mas um espaço de apoio essencial para promover a saúde mental e a resiliência.
         </p>
         <div class="gallery">
             <div class="gallery-item">
@@ -119,6 +143,7 @@
             <div class="name-item">Professora Marlei - Orientadora</div>
             <div class="name-item">Professor Éderson - Coorientador</div>
         </div>
+        <a href="inicio.html" class="btn-back">Voltar para a Página Inicial</a>
     </div>
 </body>
 </html>

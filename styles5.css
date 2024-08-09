@@ -63,7 +63,7 @@ body::before {
     font-weight: 700;
     text-align: center;
     border-bottom: 1px solid #ddd;
-    background-image: url('figures/sapos/Rogerio.png'); /* Imagem padrão */
+    background-image: url('figures/sapos/sapo-verde.png'); /* Imagem padrão */
     background-size: 40px 40px;
     background-repeat: no-repeat;
     background-position: right center;
@@ -108,11 +108,11 @@ body::before {
     left: -50px;
     width: 40px;
     height: 40px;
-    background-image: url('figures/sapos/Rogerio.png'); /* Imagem padrão para o usuário */
+    background-image: url('figures/sapos/sapo-verde.png'); /* Imagem padrão para o usuário */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    color: transparent; /* Torna o texto invisível, mas útil para depuração */
+    color: transparent; 
 }
 
 .message-sapo::before {
@@ -122,11 +122,11 @@ body::before {
     right: -50px;
     width: 40px;
     height: 40px;
-    background-image: url('figures/sapos/Rogerio.png'); /* Imagem padrão do sapo */
+    background-image: url('figures/sapos/sapo-verde.png'); /* Imagem padrão do sapo */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    color: transparent; /* Torna o texto invisível, mas útil para depuração */
+    color: transparent; 
 }
 .chat-footer {
     display: flex;
