@@ -9,13 +9,26 @@ document.addEventListener('DOMContentLoaded', function() {
         return urlParams.get(param);
     }
 
+    const sapo = getQueryParam('sapo') || 'Verde'; // Cor padrão se não especificada
+    const sapoColors = {
+        'Verde': 'figures/sapos/sapo-verde.png',
+        'Amarelo': 'figures\sapos\sapo-amarelo.png',
+        'Azul': 'figures/sapos/sapo-azul.png',
+        'Vermelho': 'figures/sapos/sapo-vermelho.png',
+        'Roxo': 'figures\sapos\sapo-roxo.png',
+        'Laranja': 'figures\sapos\sapo-laranja.png'
+    };
+
+    // Atualiza a imagem do fundo do cabeçalho com base na cor do sapo
+    chatHeader.style.backgroundImage = `url('figures/sapos/${sapoColors[sapo]}')`;
+
     const responses = {
         'Olá': 'Olá! Como posso ajudar você hoje?',
         'Oi': 'Oi!! Como posso ajudar você hoje?',
-        'Como posso te chamar?': `Pode me chamar de ${getQueryParam('sapo')}.`,
+        'Como posso te chamar?': `Pode me chamar de ${sapo}.`,
         'Como você está?': 'Estou ótimo, obrigado por perguntar!',
         'O que você faz?': 'Eu sou um usuário como você e estou aqui para ajudar você com suas perguntas.',
-        'Tchau': 'Até logo! Lembre-se que sempre estrei aqui.'
+        'Tchau': 'Até logo! Lembre-se que sempre estarei aqui.'
     };
 
     function addMessage(sender, text) {
@@ -34,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const response = responses[userMessage] || 'Desculpe, eu não entendi isso.';
             setTimeout(() => {
-                addMessage(getQueryParam('sapo'), response);
+                addMessage(sapo, response);
             }, 500); 
         }
     }
@@ -48,5 +61,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    chatHeader.textContent = `Você está conversando com ${getQueryParam('sapo')}`;
+    chatHeader.textContent = `Você está conversando com o Sapo ${sapo}`;
 });

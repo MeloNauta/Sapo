@@ -7,6 +7,23 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+    url('figures/background.png');
+    background-repeat: repeat; 
+    background-size: 200px 200px; 
+    z-index: -1; 
 }
 
 .intro-container {
@@ -15,16 +32,17 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
+    flex-direction: column; /* Garante que os elementos estejam em coluna */
+    text-align: center;
 }
 
 .intro-box {
     background: #fff;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     width: 360px;
     max-width: 100%;
-    text-align: center;
     animation: fadeInUp 0.6s ease-out;
 }
 
@@ -57,6 +75,8 @@ h2 {
 .button-group {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centraliza os botões horizontalmente */
+    width: 100%; /* Garante que os botões ocupem o espaço disponível */
     gap: 15px;
 }
 

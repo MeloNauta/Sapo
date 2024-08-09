@@ -3,15 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O que é o Sapo?</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Projeto Sapo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f5f5dc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+    url('figures/background.png');
+    background-repeat: repeat; 
+    background-size: 200px 200px; 
+    z-index: -1; 
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background: #fff; /* Fundo branco para o contêiner */
+            padding: 40px; /* Adiciona espaçamento interno */
+            border-radius: 12px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #4CAF50;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 40px;
+            text-align: justify; /* Justifica o texto */
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 3px solid #4CAF50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .names {
+            margin-top: 30px;
+        }
+
+        .name-item {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <div class="info-container">
-        <div class="info-box">
-            <h1>O que é o Sapo?</h1>
-            <p>O Sapo é um Serviço de Apoio Psicológico Online dedicado a fornecer suporte emocional e psicológico para pessoas que precisam de ajuda. Nosso objetivo é oferecer uma plataforma acessível e segura para que você possa receber o apoio necessário a qualquer momento.</p>
-            <a href="inicio.html" class="btn">Voltar para a Página Inicial</a>
+    <div class="container">
+        <h1>Projeto Sapo</h1>
+        <p>
+            O Projeto Sapo surgiu na mostra científica do CETEC de 2023, com o aluno Cauã Melo Portela. Em 2024, o projeto está sendo aprimorado pelos estudantes Cauã, Lucas e Jaison da turma Kappa 2 do CETEC. Atualmente, muitos jovens enfrentam barreiras para acessar terapia psicológica devido a questões financeiras ou percepções errôneas. Embora a visão de que a saúde mental é uma "frescura" esteja mudando, ainda há estigmas a superar. O Sapo surge como uma solução para essa questão, oferecendo um espaço de apoio psicológico acessível. Com base na constatação de que o apoio psicológico é crucial para o bem-estar mental, o Sapo propõe sessões de bate-papo anônimas, permitindo que jovens compartilhem experiências e ofereçam suporte mútuo. O objetivo é criar uma comunidade segura e acolhedora, proporcionando um suporte valioso para aqueles que enfrentam dificuldades. O Sapo não é apenas uma plataforma, mas um espaço de apoio essencial para promover a saúde mental e a resiliência. 
+        </p>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="figures/Cauã.jpg" alt="Cauã">
+            </div>
+            <div class="gallery-item">
+                <img src="figures/Lucas.png" alt="Lucas">
+            </div>
+            <div class="gallery-item">
+                <img src="figures/Jaison.png" alt="Jaison">
+            </div>
+            <div class="gallery-item">
+                <img src="figures/Marlei.jpg" alt="Professora Marlei">
+            </div>
+            <div class="gallery-item">
+                <img src="figures/Éderson.png" alt="Professor Éderson">
+            </div>
+        </div>
+        <div class="names">
+            <div class="name-item">Cauã Melo Portela - Estudante</div>
+            <div class="name-item">Lucas Günther Corrêa - Estudante</div>
+            <div class="name-item">Jaison Cassiano Lorenzetti Jr - Estudante</div>
+            <div class="name-item">Professora Marlei - Orientadora</div>
+            <div class="name-item">Professor Éderson - Coorientador</div>
         </div>
     </div>
 </body>

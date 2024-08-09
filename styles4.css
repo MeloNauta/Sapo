@@ -7,6 +7,22 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Arial', sans-serif;
+    position: relative; /* Adiciona posição relativa para o ::before */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+        url('figures/background.png');
+    background-repeat: repeat; 
+    background-size: 200px 200px; 
+    z-index: -1; 
 }
 
 .home-container {
@@ -56,9 +72,8 @@ h1 {
 
 .btn {
     display: inline-block;
-    width: 100%;
-    max-width: 280px; /* Limita a largura dos botões */
-    padding: 14px;
+    width: auto; /* Faz o botão ter largura automática */
+    padding: 14px ; /* Aumenta o padding para ter mais largura */
     border: none;
     border-radius: 8px;
     background: #4CAF50;
@@ -68,6 +83,7 @@ h1 {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    align-self: center; /* Centraliza o botão dentro da caixa */
 }
 
 .btn:hover {
@@ -83,7 +99,7 @@ h1 {
 }
 
 .chat-btn:hover {
-    background-color: #4CAF50; /* Cor de hover distinta */
+    background-color: #45a049; /* Cor de hover distinta */
 }
 
 .loading {
@@ -96,7 +112,7 @@ h1 {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    animation: spin 1s linear infinite;
+    animation: spin 0.5s linear infinite;
     margin: 0 auto;
 }
 
@@ -125,5 +141,5 @@ h1 {
     font-size: 18px;
     text-decoration: none;
     border-radius: 0 0 12px 12px;
-    margin-top: 20px; /* Espaço suficiente para separar dos botões acima */
+    margin-top: 10px; /* Espaço suficiente para separar dos botões acima */
 }
