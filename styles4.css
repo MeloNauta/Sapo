@@ -66,14 +66,14 @@ h1 {
 .button-group {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza os botões horizontalmente */
+    align-items: center; 
     gap: 15px;
 }
 
 .btn {
     display: inline-block;
-    width: auto; /* Faz o botão ter largura automática */
-    padding: 14px ; /* Aumenta o padding para ter mais largura */
+    width: auto; 
+    padding: 14px ; 
     border: none;
     border-radius: 8px;
     background: #4CAF50;
@@ -83,7 +83,7 @@ h1 {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    align-self: center; /* Centraliza o botão dentro da caixa */
+    align-self: center;
 }
 
 .btn:hover {
@@ -95,11 +95,11 @@ h1 {
 }
 
 .chat-btn {
-    background: #4CAF50; /* Cor distinta para o botão de bate-papo */
+    background: #4CAF50; 
 }
 
 .chat-btn:hover {
-    background-color: #45a049; /* Cor de hover distinta */
+    background-color: #45a049; 
 }
 
 .loading {
@@ -130,7 +130,6 @@ h1 {
     color: #333;
 }
 
-/* Estilo consistente para o botão de voltar */
 .btn-back {
     display: block;
     text-align: center;
@@ -141,5 +140,5 @@ h1 {
     font-size: 18px;
     text-decoration: none;
     border-radius: 0 0 12px 12px;
-    margin-top: 10px; /* Espaço suficiente para separar dos botões acima */
+    margin-top: 10px; 
 }

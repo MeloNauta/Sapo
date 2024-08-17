@@ -11,24 +11,22 @@ document.getElementById('searchBtn').addEventListener('click', function() {
         document.getElementById('result').style.display = 'block';
         document.getElementById('foundMessage').textContent = `Sapo encontrado: ${nomeAleatorio}`;
 
-        const sapoCor = nomeAleatorio.split(' ')[1].toLowerCase(); // Extrai a cor do sapo
+        const sapoCor = nomeAleatorio.split(' ')[1].toLowerCase();
         const chatBtn = document.getElementById('chatBtn');
         chatBtn.href = `chat.html?sapo=${encodeURIComponent(sapoCor)}`;
         chatBtn.style.display = 'inline-block';
     }, 5000);
 });
 
-// Quando a página de chat carregar
 window.addEventListener('DOMContentLoaded', (event) => {
     const urlParams = new URLSearchParams(window.location.search);
     const sapoCor = urlParams.get('sapo');
 
     if (sapoCor) {
-        // Atualiza o ícone do cabeçalho do chat
+
         const chatHeader = document.getElementById('chatHeader');
         chatHeader.style.backgroundImage = `url('figures/sapos/sapo-${sapoCor}.png')`;
 
-        // Atualiza o ícone do usuário e do sapo nas mensagens
         const userMessages = document.querySelectorAll('.message-user::before');
         const sapoMessages = document.querySelectorAll('.message-sapo::before');
         

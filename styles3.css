@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Arial', sans-serif;
-    position: relative; /* Adiciona o posicionamento relativo para o pseudo-elemento */
+    position: relative; 
 }
 
 body::before {
@@ -47,7 +47,7 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50%; /* Faz a caixa ocupar toda a altura disponível */
+    height: 50%;
 }
 
 @keyframes fadeInUp {
@@ -90,8 +90,8 @@ h1 {
 
 .btn {
     display: inline-block;
-    width: auto; /* Faz o botão ter largura automática */
-    padding: 14px 150px; /* Aumenta o padding para ter mais largura */
+    width: auto; 
+    padding: 14px 150px; 
     border: none;
     border-radius: 8px;
     background: #4CAF50;
@@ -101,7 +101,7 @@ h1 {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    align-self: center; /* Centraliza o botão dentro da caixa */
+    align-self: center; 
 }
 
 .btn:hover {

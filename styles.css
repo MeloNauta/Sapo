@@ -32,7 +32,7 @@ body::before {
     align-items: center;
     width: 100%;
     height: 100%;
-    flex-direction: column; /* Garante que os elementos estejam em coluna */
+    flex-direction: column; 
     text-align: center;
 }
 
@@ -75,8 +75,8 @@ h2 {
 .button-group {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza os botões horizontalmente */
-    width: 100%; /* Garante que os botões ocupem o espaço disponível */
+    align-items: center; 
+    width: 100%; 
     gap: 15px;
 }
 
