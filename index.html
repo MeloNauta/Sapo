@@ -3,57 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sapo - Home</title>
-    <link rel="stylesheet" href="styles4.css">
-    <!-- Link para o Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Sapo - Introdução</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="home-container">
-        <div class="home-box">
-            <h1>Bem-vindo ao Sapo</h1>
+    <div class="intro-container">
+        <div class="intro-box">
+            <h1>Sapo</h1>
+            <h2>Serviço de Apoio e Orientação Online</h2>
             <div class="button-group">
-                <button id="searchBtn" class="btn">Procurar um Sapo</button>
-                <div id="loading" class="loading" style="display: none;">
-                    <div class="spinner"></div>
-                </div>
-                <div id="result" class="result" style="display: none;">
-                    <p id="foundMessage"></p>
-                    <a id="chatBtn" class="btn chat-btn" href="#" style="display: none;">Continuar para Bate-Papo</a>
-                </div>
+                <a href="register.html" class="btn">Registrar</a>
+                <a href="login.html" class="btn">Login</a>
+                <a href="about.html" class="btn">O que é o Sapo?</a>
             </div>
         </div>
     </div>
-
-    <!-- Botões fixos no canto da tela -->
-    <button id="historyBtn" class="btn history-btn">Histórico</button>
-    <button id="settingsBtn" class="btn settings-btn">Configurações</button>
-
-    <!-- Modal para o histórico de conversas -->
-    <div id="historyModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Histórico de Conversas</h2>
-            <div id="historyContent"></div>
-        </div>
-    </div>
-
-    <!-- Modal para configurações -->
-    <div id="settingsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-settings">&times;</span>
-            <h2>Escolha seu Ícone</h2>
-            <div id="iconSelection">
-                <!-- Ícones do Font Awesome -->
-                <i class="fas fa-frog icon-option"></i>
-                <i class="fas fa-dragon icon-option"></i>
-                <i class="fas fa-cat icon-option"></i>
-                <i class="fas fa-dog icon-option"></i>
-                <i class="fas fa-robot icon-option"></i>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
