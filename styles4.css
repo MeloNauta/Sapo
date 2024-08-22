@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Arial', sans-serif;
-    position: relative; /* Adiciona posição relativa para o ::before */
+    position: relative;
 }
 
 body::before {
@@ -73,7 +73,7 @@ h1 {
 .btn {
     display: inline-block;
     width: auto; 
-    padding: 14px ; 
+    padding: 14px; 
     border: none;
     border-radius: 8px;
     background: #4CAF50;
@@ -141,4 +141,165 @@ h1 {
     text-decoration: none;
     border-radius: 0 0 12px 12px;
     margin-top: 10px; 
+}
+
+/* Estilos para o Modal */
+.modal {
+    display: none; /* Ocultar modal inicialmente */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 90%;
+    max-width: 500px;
+    max-height: 60vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close, .close-settings {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover, .close:focus, .close-settings:hover, .close-settings:focus {
+    color: #000;
+}
+
+.modal-content .btn {
+    display: inline-block;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.modal-content .btn:hover {
+    background-color: #45a049;
+}
+
+.modal-content .btn:active {
+    transform: scale(0.98);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close, .close-settings {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover, .close:focus, .close-settings:hover, .close-settings:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+#iconSelection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.icon-option {
+    font-size: 60px; /* Diminui o tamanho dos ícones */
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    padding: 20px; /* Aumenta o tamanho do círculo de seleção */
+    border-radius: 50%; /* Garante que o círculo seja arredondado */
+    border: 3px solid transparent; /* Adiciona uma borda transparente inicialmente */
+    display: inline-flex; /* Alinha o ícone ao centro do círculo */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    align-items: center; /* Centraliza o ícone verticalmente */
+}
+
+.icon-option:hover {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
+}
+
+.icon-option.selected {
+    color: #4CAF50;
+    border: 3px solid #4CAF50; /* Borda colorida quando selecionado */
+}
+
+/* Botões fixos no canto da tela */
+.fixed-buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    z-index: 1000;
+}
+
+.fixed-buttons .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.btn-clear-history {
+    background: #f44336; /* Cor de fundo vermelha para o botão de limpar */
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-clear-history:hover {
+    background-color: #d32f2f; /* Cor de fundo vermelha mais escura ao passar o mouse */
+}
+
+.btn-clear-history:active {
+    transform: scale(0.98); /* Reduz o tamanho do botão ao clicar */
 }

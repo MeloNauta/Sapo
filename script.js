@@ -23,12 +23,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const sapoCor = urlParams.get('sapo');
 
     if (sapoCor) {
-
         const chatHeader = document.getElementById('chatHeader');
-        chatHeader.style.backgroundImage = `url('figures/sapos/sapo-${sapoCor}.png')`;
+        if (chatHeader) {
+            chatHeader.style.backgroundImage = `url('figures/sapos/sapo-${sapoCor}.png')`;
+        }
 
-        const userMessages = document.querySelectorAll('.message-user::before');
-        const sapoMessages = document.querySelectorAll('.message-sapo::before');
+        const userMessages = document.querySelectorAll('.message-user');
+        const sapoMessages = document.querySelectorAll('.message-sapo');
         
         userMessages.forEach(message => {
             message.style.backgroundImage = `url('figures/sapos/sapo-${sapoCor}.png')`;
@@ -38,4 +39,88 @@ window.addEventListener('DOMContentLoaded', (event) => {
             message.style.backgroundImage = `url('figures/sapos/sapo-${sapoCor}.png')`;
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const historyBtn = document.getElementById('historyBtn');
+    const settingsBtn = document.getElementById('settingsBtn');
+    const historyModal = document.getElementById('historyModal');
+    const settingsModal = document.getElementById('settingsModal');
+    const closeHistoryBtn = document.querySelector('.close');
+    const closeSettingsBtn = document.querySelector('.close-settings');
+    const historyContent = document.getElementById('historyContent');
+    const iconOptions = document.querySelectorAll('.icon-option');
+    const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+
+    function loadHistory() {
+        const conversations = JSON.parse(localStorage.getItem('conversations')) || [];
+        historyContent.innerHTML = '';
+
+        if (conversations.length === 0) {
+            historyContent.innerHTML = '<p>Nenhuma conversa encontrada.</p>';
+        } else {
+            conversations.forEach(convo => {
+                const convoElement = document.createElement('div');
+                convoElement.className = 'convo-item';
+
+                const sapoColor = convo.sapoColor || 'green';
+                const sapoColorDiv = `<div class="sapo-color" style="background-color: ${sapoColor};"></div>`;
+
+                convoElement.innerHTML = `${sapoColorDiv}<strong>${convo.sender}:</strong> ${convo.text} <br><small>${new Date(convo.timestamp).toLocaleString()}</small>`;
+                historyContent.appendChild(convoElement);
+            });
+        }
+    }
+
+    historyBtn.addEventListener('click', function() {
+        loadHistory();
+        historyModal.style.display = 'block';
+    });
+
+    settingsBtn.addEventListener('click', function() {
+        settingsModal.style.display = 'block';
+    });
+
+    closeHistoryBtn.addEventListener('click', function() {
+        historyModal.style.display = 'none';
+    });
+
+    closeSettingsBtn.addEventListener('click', function() {
+        settingsModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === historyModal) {
+            historyModal.style.display = 'none';
+        }
+        if (event.target === settingsModal) {
+            settingsModal.style.display = 'none';
+        }
+    });
+
+    iconOptions.forEach(icon => {
+        icon.addEventListener('click', function() {
+            iconOptions.forEach(i => i.classList.remove('selected'));
+            this.classList.add('selected');
+            localStorage.setItem('selectedIcon', this.className);
+        });
+    });
+
+    function loadSelectedIcon() {
+        const selectedIconClass = localStorage.getItem('selectedIcon');
+        if (selectedIconClass) {
+            iconOptions.forEach(icon => {
+                if (icon.className === selectedIconClass) {
+                    icon.classList.add('selected');
+                }
+            });
+        }
+    }
+
+    loadSelectedIcon();
+
+    clearHistoryBtn.addEventListener('click', function() {
+        localStorage.removeItem('conversations');
+        loadHistory();
+    });
 });
