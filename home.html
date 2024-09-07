@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sapo - Home</title>
     <link rel="stylesheet" href="styles4.css">
-    <!-- Link para o Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -24,14 +23,10 @@
             </div>
         </div>
     </div>
-
-    <!-- Contêiner para botões fixos -->
     <div class="fixed-buttons">
         <button id="historyBtn" class="btn history-btn"><i class="fas fa-history"></i> Histórico</button>
         <button id="settingsBtn" class="btn settings-btn"><i class="fas fa-cogs"></i> Configurações</button>
     </div>
-
-    <!-- Modal para o histórico de conversas -->
     <div id="historyModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -40,22 +35,30 @@
             <button id="clearHistoryBtn" class="btn btn-clear-history">Limpar Histórico</button>
         </div>
     </div>
-
-    <!-- Modal para configurações -->
     <div id="settingsModal" class="modal">
         <div class="modal-content">
             <span class="close-settings">&times;</span>
-            <h2>Escolha seu Ícone: </h2>
+            <h2 class="settings-title">Configurações</h2>
+            <h3>Escolha seu Ícone:</h3>
             <div id="iconSelection">
-                <!-- Ícones do Font Awesome -->
-                <i class="fas fa-frog icon-option"></i>
-                <i class="fas fa-cat icon-option"></i>
-                <i class="fas fa-dog icon-option"></i>
-                <i class="fas fa-crow icon-option"></i>
-                <i class="fas fa-robot icon-option"></i>
+                <i class="fas fa-frog icon-option" data-icon="frog"></i>
+                <i class="fas fa-cat icon-option" data-icon="cat"></i>
+                <i class="fas fa-dog icon-option" data-icon="dog"></i>
+                <i class="fas fa-crow icon-option" data-icon="crow"></i>
+                <i class="fas fa-robot icon-option" data-icon="robot"></i>
+            </div>
+            <h3>Modo de Interação:</h3>
+            <div id="interactionMode">
+                <button id="supportMode" class="btn">Quero apoiar</button>
+                <button id="seekSupportMode" class="btn">Quero ser apoiado</button>
+            </div>
+            <div id="interactionConfirmation" class="interaction-confirmation" style="display: none;">
+                <p id="supportConfirmation"><strong>Você está agora no modo de apoio. Estamos felizes em contar com sua ajuda!</strong></p>
+                <p id="seekSupportConfirmation"><strong>Você está agora no modo de receber apoio. Estamos aqui para ajudar você!</strong></p>
             </div>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

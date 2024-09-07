@@ -1,3 +1,84 @@
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('supportMode').addEventListener('click', function () {
+        document.getElementById('interactionConfirmation').style.display = 'block';
+        document.getElementById('supportConfirmation').style.display = 'block';
+        document.getElementById('seekSupportConfirmation').style.display = 'none';
+
+        const chatBtn = document.getElementById('chatBtn');
+        chatBtn.href = 'chat.html?sapo=verde'; 
+    });
+
+    document.getElementById('seekSupportMode').addEventListener('click', function () {
+        document.getElementById('interactionConfirmation').style.display = 'block';
+        document.getElementById('supportConfirmation').style.display = 'none';
+        document.getElementById('seekSupportConfirmation').style.display = 'block';
+
+        const chatBtn = document.getElementById('chatBtn');
+        chatBtn.href = 'chat.html?sapo=azul';
+    });
+
+    var historyModal = document.getElementById("historyModal");
+    var historyBtn = document.getElementById("historyBtn");
+    var closeHistory = document.querySelector("#historyModal .close");
+    var clearHistoryBtn = document.getElementById("clearHistoryBtn");
+
+    historyBtn.onclick = function () {
+        loadHistory();
+        historyModal.style.display = "block";
+    }
+
+    closeHistory.onclick = function () {
+        historyModal.style.display = "none";
+    }
+
+    clearHistoryBtn.onclick = function () {
+        localStorage.removeItem('conversations');
+        loadHistory();
+    }
+
+    window.onclick = function (event) {
+        if (event.target === historyModal) {
+            historyModal.style.display = "none";
+        }
+    }
+
+    // Modal de configurações
+    var settingsModal = document.getElementById("settingsModal");
+    var settingsBtn = document.getElementById("settingsBtn");
+    var closeSettings = document.querySelector("#settingsModal .close-settings");
+
+    settingsBtn.onclick = function () {
+        settingsModal.style.display = "block";
+    }
+
+    closeSettings.onclick = function () {
+        settingsModal.style.display = "none";
+    }
+
+    // Seletor de ícone
+    var iconSelection = document.querySelectorAll("#iconSelection .icon-option");
+    iconSelection.forEach(function (icon) {
+        icon.addEventListener("click", function () {
+            var selectedIcon = icon.getAttribute("data-icon");
+            console.log("Ícone selecionado: " + selectedIcon);
+        });
+    });
+
+    // Carregar ícone selecionado
+    function loadSelectedIcon() {
+        const selectedIconClass = localStorage.getItem('selectedIcon');
+        if (selectedIconClass) {
+            iconOptions.forEach(icon => {
+                if (icon.className === selectedIconClass) {
+                    icon.classList.add('selected');
+                }
+            });
+        }
+    }
+
+    loadSelectedIcon();
+});
+
 document.getElementById('searchBtn').addEventListener('click', function() {
     document.getElementById('loading').style.display = 'block';
     document.getElementById('result').style.display = 'none';

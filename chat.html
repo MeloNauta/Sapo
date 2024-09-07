@@ -5,23 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bate-Papo com o Sapo</title>
     <link rel="stylesheet" href="styles5.css">
-    <!-- Link para Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-box">
             <div id="chatHeader" class="chat-header">
+          
             </div>
             <div class="chat-content" id="chatContent">
+           
             </div>
             <div class="chat-footer">
                 <textarea id="userInput" placeholder="Digite sua mensagem..." autofocus></textarea>
                 <button id="sendBtn" class="btn">Enviar</button>
-            </div>            
-            <a href="home.html" class="btn btn-back">Voltar para a Página Inicial</a>
+            </div>
+            <a href="#" id="backBtn" class="btn btn-back">Voltar para a Página Inicial</a>
         </div>
     </div>
+
+
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>
+                    Avalie o Sapo <span id="sapoName"></span>
+                </h2>
+                <div id="sapoIcon" class="sapo-icon"></div>
+            </div>
+            <div class="modal-body">
+                <div id="stars" class="stars">
+                    <i class="fa fa-star" data-value="1"></i>
+                    <i class="fa fa-star" data-value="2"></i>
+                    <i class="fa fa-star" data-value="3"></i>
+                    <i class="fa fa-star" data-value="4"></i>
+                    <i class="fa fa-star" data-value="5"></i>
+                </div>
+                <button id="submitFeedback" class="btn">Enviar Feedback</button>
+            </div>
+        </div>
+    </div>
+
     <script src="chat.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatHeader = document.getElementById('chatHeader');
+            const feedbackModal = document.getElementById('feedbackModal');
+            const sapoName = document.getElementById('sapoName');
+            const stars = document.querySelectorAll('#stars i');
+            const submitFeedback = document.getElementById('submitFeedback');
+            const sapoIcons = {
+                'verde': 'figures/sapos/sapo-verde.png',
+                'amarelo': 'figures/sapos/sapo-amarelo.png',
+                'azul': 'figures/sapos/sapo-azul.png',
+                'vermelho': 'figures/sapos/sapo-vermelho.png',
+                'roxo': 'figures/sapos/sapo-roxo.png',
+                'laranja': 'figures/sapos/sapo-laranja.png'
+            };
+            
+            const sapoNomes = {
+                'verde': 'Verde',
+                'amarelo': 'Amarelo',
+                'azul': 'Azul',
+                'vermelho': 'Vermelho',
+                'roxo': 'Roxo',
+                'laranja': 'Laranja'
+            };
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const sapo = urlParams.get('sapo') || 'verde';
+
+            chatHeader.textContent = `Você está conversando com o Sapo ${sapoNomes[sapo]}`;
+
+            document.getElementById('backBtn').addEventListener('click', function() {
+                feedbackModal.style.display = 'block';
+                document.getElementById('sapoIcon').style.backgroundImage = `url('${sapoIcons[sapo]}')`;
+
+               
+                sapoName.textContent = sapoNomes[sapo];
+            });
+
+ 
+            document.querySelector('.close').addEventListener('click', function() {
+                feedbackModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === feedbackModal) {
+                    feedbackModal.style.display = 'none';
+                }
+            });
+
+            let selectedRating = 0; 
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+
+                    selectedRating = parseInt(this.getAttribute('data-value'));
+                    
+                    stars.forEach(s => s.classList.remove('active'));
+
+                    for (let i = 0; i < selectedRating; i++) {
+                        stars[i].classList.add('active');
+                    }
+                });
+            });
+
+            submitFeedback.addEventListener('click', function() {
+                if (selectedRating > 0) {
+                    alert(`Obrigado pelo seu feedback! Você avaliou com ${selectedRating} estrela(s).`);
+                    feedbackModal.style.display = 'none';
+                    window.location.href = 'home.html';
+                } else {
+                    alert('Por favor, selecione uma avaliação antes de enviar.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

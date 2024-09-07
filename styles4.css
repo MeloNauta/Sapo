@@ -143,9 +143,8 @@ h1 {
     margin-top: 10px; 
 }
 
-/* Estilos para o Modal */
 .modal {
-    display: none; /* Ocultar modal inicialmente */
+    display: none; 
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -195,18 +194,21 @@ h1 {
     color: #000;
 }
 
-.modal-content .btn {
+.modal-content 
+.btn {
     display: inline-block;
-    padding: 14px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
     border: none;
     border-radius: 8px;
-    background: #4CAF50;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
 }
 
 .modal-content .btn:hover {
@@ -249,34 +251,33 @@ h1 {
 }
 
 .icon-option {
-    font-size: 60px; /* Diminui o tamanho dos ícones */
-    margin: 20px;
+    font-size: 40px; 
+    margin: 10px;
     cursor: pointer;
     transition: transform 0.3s;
-    padding: 20px; /* Aumenta o tamanho do círculo de seleção */
-    border-radius: 50%; /* Garante que o círculo seja arredondado */
-    border: 3px solid transparent; /* Adiciona uma borda transparente inicialmente */
-    display: inline-flex; /* Alinha o ícone ao centro do círculo */
-    justify-content: center; /* Centraliza o ícone horizontalmente */
-    align-items: center; /* Centraliza o ícone verticalmente */
+    padding: 10px; 
+    border-radius: 50%; 
+    border: 3px solid transparent; 
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center; 
 }
 
 .icon-option:hover {
-    transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
+    transform: scale(1.2); 
 }
 
 .icon-option.selected {
     color: #4CAF50;
-    border: 3px solid #4CAF50; /* Borda colorida quando selecionado */
+    border: 3px solid #4CAF50; 
 }
 
-/* Botões fixos no canto da tela */
 .fixed-buttons {
     position: fixed;
     top: 20px;
     right: 20px;
     display: flex;
-    gap: 10px; /* Espaço entre os botões */
+    gap: 10px; 
     z-index: 1000;
 }
 
@@ -286,7 +287,7 @@ h1 {
 }
 
 .btn-clear-history {
-    background: #f44336; /* Cor de fundo vermelha para o botão de limpar */
+    background: #f44336;
     border: none;
     color: #fff;
     padding: 10px 20px;
@@ -297,9 +298,9 @@ h1 {
 }
 
 .btn-clear-history:hover {
-    background-color: #d32f2f; /* Cor de fundo vermelha mais escura ao passar o mouse */
+    background-color: #d32f2f;
 }
 
 .btn-clear-history:active {
-    transform: scale(0.98); /* Reduz o tamanho do botão ao clicar */
+    transform: scale(0.98); 
 }

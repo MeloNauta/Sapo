@@ -74,22 +74,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const sapoIcon = document.createElement('span');
             sapoIcon.className = 'sapo-icon';
             sapoIcon.style.backgroundImage = `url('${sapoColors[sapo]}')`;
-            message.appendChild(sapoIcon); // Adiciona o avatar do Sapo
-            message.appendChild(messageText); // Adiciona o texto do Sapo
+            message.appendChild(sapoIcon); 
+            message.appendChild(messageText); 
         } else {
-            message.appendChild(messageText); // Adiciona o texto do usuário
+            message.appendChild(messageText); 
             const selectedIconClass = localStorage.getItem('selectedIcon');
             if (selectedIconClass) {
                 const userIcon = document.createElement('i');
                 userIcon.className = selectedIconClass;
-                message.appendChild(userIcon); // Adiciona o ícone do usuário
+                message.appendChild(userIcon);
             }
         }
     
         chatContent.appendChild(message);
         chatContent.scrollTop = chatContent.scrollHeight;
     
-        // Salva a conversa no localStorage
         saveConversation(sender, text);
     }
     

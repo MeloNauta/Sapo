@@ -37,51 +37,50 @@ body::before {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 480px; /* Tamanho máximo da caixa de chat */
+    max-width: 480px; 
     height: 100%;
-    max-height: 80vh; /* Altura máxima para evitar sair da tela */
+    max-height: 80vh; 
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    box-sizing: border-box; /* Inclui padding e bordas nas dimensões totais */
+    box-sizing: border-box;
 }
 
-/* Garante que o conteúdo do chat não ultrapasse a área visível */
 .chat-content {
     flex: 1;
     padding: 20px;
     background: #f9f9f9;
     overflow-y: auto;
-    max-height: calc(80vh - 120px); /* Ajusta a altura máxima para o conteúdo */
+    max-height: calc(80vh - 120px); 
     border-bottom: 1px solid #ddd;
-    box-sizing: border-box; /* Inclui padding nas dimensões totais */
+    box-sizing: border-box; 
 }
 
-/* Ajusta a mensagem do usuário para ter um pequeno espaço à direita */
 .chat-content .message-user {
     background: #4CAF50; 
     color: #fff;
-    margin-left: auto; /* Garante que a mensagem do usuário fique alinhada à direita */
-    margin-bottom: 20px; /* Espaço entre mensagens */
+    margin-left: auto; 
+    margin-bottom: 20px; 
     padding: 12px;
     border-radius: 15px;
     max-width: 75%;
     word-break: break-word;
-    margin-right: 10px; /* Adiciona um espaço à direita */
+    margin-right: 10px;
 }
 
-/* Ajusta a mensagem da máquina para ter um pequeno espaço à esquerda */
 .chat-content .message-sapo {
     background: #fff; 
     color: #333;
-    margin-right: auto; /* Garante que a mensagem da máquina fique alinhada à esquerda */
-    margin-bottom: 20px; /* Espaço entre mensagens */
+    margin-right: auto; 
+    margin-bottom: 20px; 
     padding: 12px;
     border-radius: 15px;
     max-width: 75%;
     word-break: break-word;
-    margin-left: 10px; /* Adiciona um espaço à esquerda */
+    margin-left: 10px;
+    max-height: 150px; 
+    overflow-y: auto;
 }
 
 @keyframes fadeInUp {
@@ -115,45 +114,40 @@ body::before {
     background: #f9f9f9; 
     overflow-y: auto;
     max-height: 600px; 
-    border-bottom: 1px solid #ddd; /* Ajuste se necessário */
+    border-bottom: 1px solid #ddd;
 }
 
-/* Espaçamento entre mensagens */
 .chat-content .message-user {
     background: #4CAF50; 
     color: #fff;
-    margin-left: auto; /* Garante que a mensagem do usuário fique alinhada à direita */
-    margin-bottom: 20px; /* Espaço entre mensagens */
+    margin-left: auto; 
+    margin-bottom: 20px;
     padding: 12px;
     border-radius: 15px;
     max-width: 75%;
     word-break: break-word;
-    margin-right: 10px; /* Adiciona um espaço à direita */
+    margin-right: 10px; 
 }
 
-/* Adiciona um espaço adicional no topo da primeira mensagem do usuário */
 .chat-content .message-user:first-child {
-    margin-top: 20px; /* Ajuste conforme necessário */
+    margin-top: 20px; 
 } 
-/* Ajusta a mensagem da máquina para ter um pequeno espaço à esquerda */
+
 .chat-content .message-sapo {
     background: #fff; 
     color: #333;
-    margin-right: auto; /* Garante que a mensagem da máquina fique alinhada à esquerda */
-    margin-bottom: 20px; /* Espaço entre mensagens */
+    margin-right: auto; 
+    margin-bottom: 20px; 
     padding: 12px;
     border-radius: 15px;
     max-width: 75%;
     word-break: break-word;
-    margin-left: 10px; /* Adiciona um espaço à esquerda */
+    margin-left: 10px; 
 }
 
-/* Adiciona um espaço adicional no topo da primeira mensagem */
+
 .chat-content .message-sapo:first-child {
-    margin-top: 20px; /* Ajuste conforme necessário */
-}
-.chat-content .message-sapo:first-child {
-    margin-top: 20px; /* Ajuste conforme necessário */
+    margin-top: 20px;
 }
 
 .chat-content p {
@@ -199,7 +193,7 @@ body::before {
     margin: 0;
     padding: 0;
     display: inline-block;
-    max-width: calc(100% - 60px); /* Garante que o texto não ultrapasse o ícone */
+    max-width: calc(100% - 60px); 
     word-break: break-word;
 }
 
@@ -322,4 +316,82 @@ button:active {
 
 #sendBtn:active {
     transform: scale(0.98);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.stars i {
+    font-size: 40px;
+    color: gray;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.stars i.active {
+    color: gold;
+}
+
+.sapo-icon {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    margin: 20px auto;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
+}
+
+.btn-back {
+    margin-top: 10px;
 }
