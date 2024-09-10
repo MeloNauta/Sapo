@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'seekSupportMode': { // Respostas para o modo de buscar suporte
             'Olá': 'Olá! Este é o lugar para você que busca receber apoio. Como você está se sentindo hoje?',
             'Oi': 'Oi! Este é o lugar certo para você que busca receber apoio. Como você está se sentindo hoje?',
-            'Não estou bem': 'O que você está sentindo?',
+            'Não estou bem': 'O que aconteceu?',
+            'Como posso te chamar?': `Pode me chamar de Sapo ${sapo.charAt(0).toUpperCase() + sapo.slice(1)}.`,
             'O que você faz?': 'Eu sou um usuário como você e estou aqui para ajudar ou somento conversar com você !!',
             'Estou triste': 'Você gostaria de conversar sobre algo que aconteceu recentemente?',
             'Estou desmotivado': 'Você gostaria de conversar sobre o que está te desmotivando?',
