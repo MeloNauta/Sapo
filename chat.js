@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
            
             },
         'seekSupportMode': { // Respostas para o modo de buscar suporte
-            'Olá': 'Olá! Aqui é pra vc que bsuca por ajuda. Como você está se sentindo hoje?',
-            'Oi': 'Oi! Este é o lugar certo para pedir ajuda. Como você está se sentindo hoje?',
+            'Olá': 'Olá! Este é o lugar para você que busca receber apoio. Como você está se sentindo hoje?',
+            'Oi': 'Oi! Este é o lugar certo para você que busca receber apoio. Como você está se sentindo hoje?',
             'Não estou bem': 'O que você está sentindo?',
             'O que você faz?': 'Eu sou um usuário como você e estou aqui para ajudar ou somento conversar com você !!',
             'Estou triste': 'Você gostaria de conversar sobre algo que aconteceu recentemente?',
