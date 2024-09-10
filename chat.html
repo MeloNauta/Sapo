@@ -6,32 +6,115 @@
     <title>Bate-Papo com o Sapo</title>
     <link rel="stylesheet" href="styles5.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos CSS para o modal e outros elementos */
+        /* Modal */
+        .modal {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+        }
+
+        .modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* Ajuste a margem para centralizar verticalmente */
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px; /* Tamanho máximo do modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center; /* Centraliza o texto e o conteúdo no modal */
+}
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .stars i {
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .stars i.active {
+            color: #f5c518; /* Cor das estrelas ativas */
+        }
+
+        .stars i:hover {
+            color: #f5c518; /* Cor das estrelas ao passar o mouse */
+        }
+
+        .btn {
+            display: block;
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin: 0 auto;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+    </style>
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-box">
             <div id="chatHeader" class="chat-header">
-          
+                <!-- Header do chat -->
             </div>
             <div class="chat-content" id="chatContent">
-           
+                <!-- Conteúdo do chat -->
             </div>
             <div class="chat-footer">
                 <textarea id="userInput" placeholder="Digite sua mensagem..." autofocus></textarea>
                 <button id="sendBtn" class="btn">Enviar</button>
             </div>
-            <a href="#" id="backBtn" class="btn btn-back">Voltar para a Página Inicial</a>
+            <a href="#" id="backBtn" class="btn btn-back">
+                <i class="fa fa-home"></i> Voltar para a Página Inicial
+            </a>
         </div>
     </div>
 
-
+    <!-- Modal de Feedback -->
     <div id="feedbackModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-header">
-                <h2>
-                    Avalie o Sapo <span id="sapoName"></span>
-                </h2>
+                <h2>Avalie o Sapo <span id="sapoName"></span></h2>
                 <div id="sapoIcon" class="sapo-icon"></div>
             </div>
             <div class="modal-body">
@@ -81,12 +164,9 @@
             document.getElementById('backBtn').addEventListener('click', function() {
                 feedbackModal.style.display = 'block';
                 document.getElementById('sapoIcon').style.backgroundImage = `url('${sapoIcons[sapo]}')`;
-
-               
                 sapoName.textContent = sapoNomes[sapo];
             });
 
- 
             document.querySelector('.close').addEventListener('click', function() {
                 feedbackModal.style.display = 'none';
             });
@@ -97,14 +177,11 @@
                 }
             });
 
-            let selectedRating = 0; 
+            let selectedRating = 0;
             stars.forEach(star => {
                 star.addEventListener('click', function() {
-
                     selectedRating = parseInt(this.getAttribute('data-value'));
-                    
                     stars.forEach(s => s.classList.remove('active'));
-
                     for (let i = 0; i < selectedRating; i++) {
                         stars[i].classList.add('active');
                     }

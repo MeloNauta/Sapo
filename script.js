@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const chatBtn = document.getElementById('chatBtn');
         chatBtn.href = 'chat.html?sapo=verde'; 
+        localStorage.setItem('chatMode', 'supportMode'); 
     });
 
     document.getElementById('seekSupportMode').addEventListener('click', function () {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const chatBtn = document.getElementById('chatBtn');
         chatBtn.href = 'chat.html?sapo=azul';
+        localStorage.setItem('chatMode', 'seekSupportMode');
     });
 
     var historyModal = document.getElementById("historyModal");
